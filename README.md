@@ -6,15 +6,36 @@
 # TBD - change this to a retail logo
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+ The "Online Retail Transaction" dataset contains information on transactions made by customers through an online retail platform. The dataset includes data on the products that were purchased, the quantity of each product, the date and time of each transaction, the price of each product, the unique identifier for each customer who made a purchase, and the country where each customer is located. This dataset can be used to analyze customer behavior and preferences, identify popular products, and optimize pricing and marketing strategies. The dataset is well-suited for data analysis and machine learning applications, as it contains a large volume of transactional data that can be used to train predictive models and make data-driven decisions.
 
+
+__Column Descriptors__
+| Column Name | Description |
+|------------|-------------|
+| StockCode | A code used to identify the product that was purchased |
+| Description | A brief description of the product that was purchased |
+| Quantity | The quantity of the product that was purchased |
+| InvoiceDate | The date and time that the purchase was made |
+| UnitPrice | The price of one unit of the product that was purchased |
+| CustomerID | The unique identifier for the customer who made the purchase |
+| Country | The country where the customer who made the purchase is located |
 
 ## Business Requirements
 * Describe your business requirements
-
+The dataset includes data on the products that were purchased, the quantity of each product, the date and time of each transaction, the price of each product, the unique identifier for each customer who made a purchase, and the country where each customer is located. This dataset can be used to analyze customer behavior and preferences, identify popular products, and optimize pricing and marketing strategies. The dataset is well-suited for data analysis and machine learning applications, as it contains a large volume of transactional data that can be used to train predictive models and make data-driven decisions.
 
 ## Hypothesis and how to validate?
 * List here your project hypothesis(es) and how you envision validating it (them) 
+* Sales may be seasonal and impacted by events such as holidays.
+* Day of the week may have a pattern.
+* Suspect that the time of purchase corresponds the the country buying i.e. not so much in the early hours
+* - assuming times are standard e.g. UTC and not local times
+* some -ve sales i.e. returns or cancellations. Which are the products being returned?
+* does %Return vary by country eg are Americans more likely to return goods?
+* are there prices changes for items? If so what happens to the sales?
+* we need to create 'Sales' = Quantity * UnitPrice and add this to the dataset
+* if 'Sales' < 0 then 'Returns' = -1*'Sales' and 'Sales' = 0
+
 
 ## Project Plan
 * Outline the high-level steps taken for the analysis.
